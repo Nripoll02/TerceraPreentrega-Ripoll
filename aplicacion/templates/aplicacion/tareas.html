@@ -1,0 +1,22 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block titulo %} Formulario Tareas {% endblock %}
+
+{% block listado %}
+
+<form action="{% url 'tareas-create' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Guardar">
+
+</form>
+
+<ul>	
+
+	{% for i in tareas %}
+		<li>{{tareas}}</li>
+	{% endfor %}
+
+</ul>
+
+{% endblock %}

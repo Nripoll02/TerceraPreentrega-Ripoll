@@ -1,0 +1,22 @@
+{% extends 'aplicacion/base.html' %}
+
+{% block titulo %} Formulario Personas {% endblock %}
+
+{% block listado %}
+
+<form action="{% url 'gatos-create' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Guardar">
+
+</form>
+
+<ul>	
+
+	{% for i in gatos %}
+		<li>{{gatos}}</li>
+	{% endfor %}
+
+</ul>
+
+{% endblock %}
